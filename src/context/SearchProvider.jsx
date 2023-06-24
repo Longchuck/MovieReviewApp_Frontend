@@ -18,11 +18,11 @@ export default function SearchProvider({ children }) {
   const [results, setResults] = useState([]);
   const [resultNotFound, setResultNotFound] = useState(false);
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const search = async (method, query, updaterFun) => {
-    const { error, results } = await method(query);
-    if (error) return updateNotification("error", error);
+    const results  = await method(query);
+    // if (error) return updateNotification("error", error);
 
     if (!results.length) {
       setResults([]);

@@ -13,11 +13,11 @@ export default function SearchMovies() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("title");
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const searchMovies = async (val) => {
-    const { error, results } = await searchPublicMovies(val);
-    if (error) return updateNotification("error", error);
+    const results  = await searchPublicMovies(val);
+    // if (error) return updateNotification("error", error);
 
     if (!results.length) {
       setResultNotFound(true);
