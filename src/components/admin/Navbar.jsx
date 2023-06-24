@@ -14,7 +14,7 @@ export default function Navbar() {
         <ul>
           <li className="mb-8">
             <Link to="/">
-              <img src="./logo.png" alt="logo" className="h-14 p-2" />
+              <img src="./logo_oldtape.png" alt="logo_oldtape" className="h-14 p-2" />
             </Link>
           </li>
           <li>
