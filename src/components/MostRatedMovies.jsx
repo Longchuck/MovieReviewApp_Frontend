@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getMostRatedMovies } from "../api/admin";
-import { useNotification } from "../hooks";
+// import { useNotification } from "../hooks";
 import { convertReviewCount } from "../utils/helper";
 import RatingStar from "./RatingStar";
 
 export default function MostRatedMovies() {
   const [movies, setMovies] = useState([]);
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const fetchMostRatedMovies = async () => {
-    const { error, movies } = await getMostRatedMovies();
-    if (error) return updateNotification("error", error);
+    const movies  = await getMostRatedMovies();
+    // if (error) return updateNotification("error", error);
 
     setMovies([...movies]);
   };

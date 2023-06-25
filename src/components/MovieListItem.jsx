@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsTrash, BsPencilSquare, BsBoxArrowUpRight } from "react-icons/bs";
 import { deleteMovie } from "../api/movie";
-import { useNotification } from "../hooks";
+// import { useNotification } from "../hooks";
 import { getPoster } from "../utils/helper";
 import ConfirmModal from "./models/ConfirmModal";
 import UpdateMovie from "./models/UpdateMovie";
@@ -12,17 +12,17 @@ const MovieListItem = ({ movie, afterDelete, afterUpdate }) => {
   const [busy, setBusy] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const handleOnDeleteConfirm = async () => {
     setBusy(true);
-    const { error, message } = await deleteMovie(movie.id);
+    const message  = await deleteMovie(movie.id);
     setBusy(false);
 
-    if (error) return updateNotification("error", error);
+    // if (error) return updateNotification("error", error);
 
     hideConfirmModal();
-    updateNotification("success", message);
+    // updateNotification("success", message);
     afterDelete(movie);
   };
 

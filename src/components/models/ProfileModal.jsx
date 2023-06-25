@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { getActorProfile } from "../../api/actor";
-import { useNotification } from "../../hooks";
+// import { useNotification } from "../../hooks";
 import ModalContainer from "./ModalContainer";
 
 export default function ProfileModal({ visible, profileId, onClose }) {
   const [profile, setProfile] = useState({});
 
-  const { updateNotification } = useNotification();
+  // const { updateNotification } = useNotification();
 
   const fetchActorProfile = async () => {
-    const { error, actor } = await getActorProfile(profileId);
-    if (error) return updateNotification("error", error);
+    const actor  = await getActorProfile(profileId);
+    // if (error) return updateNotification("error", error);
 
     setProfile(actor);
   };
